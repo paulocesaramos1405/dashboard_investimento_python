@@ -16,11 +16,11 @@ st.sidebar.header('Escolha o tipo de ativo')
 tipo_ativo = st.sidebar.radio('Selecione o tipo de ativo:', ('Ações', 'Fundos Imobiliários'))
 
 def pegar_dados_acoes():
-    path = 'C:\\Users\\rpaul\\OneDrive\\Área de Trabalho\\dashboard-investimentos.py\\acoes.csv'
+    path = './acoes.csv'  # Caminho relativo
     return pd.read_csv(path, delimiter=';')
 
 def pegar_dados_fundos():
-    path = 'C:\\Users\\rpaul\\OneDrive\\Área de Trabalho\\dashboard-investimentos.py\\fundosimobiliarios.csv'
+    path = './fundosimobiliarios.csv'  # Caminho relativo
     return pd.read_csv(path, delimiter=';')
 
 if tipo_ativo == 'Ações':
