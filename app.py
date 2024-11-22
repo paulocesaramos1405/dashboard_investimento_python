@@ -37,12 +37,10 @@ def_acao = df[df['display'] == nome_acao_escolhida]
 acao_escolhida = def_acao.iloc[0]['sigla_acao']
 acao_escolhida = acao_escolhida + '.SA'
 
-
 def pegar_valores_online(sigla_acao):
     df = yf.download(sigla_acao, start=DATA_INICIO, end=DATA_FIM)
     df.reset_index(inplace=True)
     return df
-
 
 df_valores = pegar_valores_online(acao_escolhida)
 
