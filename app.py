@@ -37,12 +37,10 @@ def_acao = df[df['display'] == nome_acao_escolhida]
 acao_escolhida = def_acao.iloc[0]['sigla_acao']
 acao_escolhida = acao_escolhida + '.SA'
 
-
 def pegar_valores_online(sigla_acao):
     df = yf.download(sigla_acao, start=DATA_INICIO, end=DATA_FIM)
     df.reset_index(inplace=True)
     return df
-
 
 df_valores = pegar_valores_online(acao_escolhida)
 
@@ -55,6 +53,13 @@ st.subheader(f'Tabela de valores - {nome_acao_escolhida}')
 st.write(df_valores.tail(15))
 
 st.subheader('Developed by Paulo César Ramos®')
-st.subheader('https://paulocesardeveloper.netlify.app/')
+st.subheader('Developed by Paulo César Ramos®')
 
-
+st.markdown(
+    """
+    <a href="https://paulocesardeveloper.netlify.app/" target="_blank" style="text-decoration: none; font-size: 20px; color: #3498db;">
+        Visite o Meu Site
+    </a>
+    """,
+    unsafe_allow_html=True
+)
